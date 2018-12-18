@@ -168,8 +168,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-事件处理机制的理解"><a href="#1-事件处理机制的理解" class="headerlink" title="1. 事件处理机制的理解"></a>1. 事件处理机制的理解</h3><pre><code>定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的
-</code></pre><ol>
-<li>DOM事件(DOM0)<br> 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定<h3 id="1-代码演示"><a href="#1-代码演示" class="headerlink" title="1. 代码演示"></a>1. 代码演示</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;测试&lt;/button&gt;
+1. DOM事件(DOM0)
+    语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.&lt;/br&gt;解绑:可设置onclick=null来接触绑定
+</code></pre><h3 id="2-代码演示"><a href="#2-代码演示" class="headerlink" title="2. 代码演示"></a>2. 代码演示</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;测试&lt;/button&gt;
 var btn = document.getElementById(&apos;btn&apos;);
 btn.onclick = function () { alert(123) }; // 123
 btn.onclick = function () { alert(456) }; // 456
@@ -181,7 +182,7 @@ btn.onclick = null // 解除绑定
       
 
       
-    </li></ol></div>
+    </div>
     <div class="article-info article-info-index">
       
       
