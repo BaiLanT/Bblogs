@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="帝都前端小学生">
 <meta property="og:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定1. 代码演示&amp;lt;button i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T15:26:53.644Z">
+<meta property="og:updated_time" content="2018-12-18T15:32:58.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018.12.17问题总结">
 <meta name="twitter:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定1. 代码演示&amp;lt;button i">
@@ -193,21 +193,13 @@ btn1.addEventListener(&apos;click&apos;,function () {
 },true);
 // 执行结果为: 456 =&gt; 123
 </code></pre></li>
-<li>自定义事件<ul>
-<li>绑定事件监听<ul>
-<li>事件名(类型): 任意</li>
-<li>回调函数: 通过形参接收数据, 在函数体处理事件</li>
-</ul>
-</li>
-<li>触发(emit)/分发(dispatch)事件(编码)<ul>
-<li>事件名(类型): 与绑定的事件监听的事件名一致</li>
-<li>数据: 会自动传递给回调函数</li>
-<li><h3 id="2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><a href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件" class="headerlink" title="2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件"></a>2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</h3>redux是一个第三方库,在React里负责集中式管理状态数据,也是React常用的状态管理库,他有3个模块,actions模块:创建多个状态数据的对象,reducers模块:是ul界面调用actions的方法,触发reducers模块处理相应的逻辑,产生新的状态数据,store模块:负责存储方法和状态数据.创建一个对应的容器组件,index引入容器组件.通过标签属性的方式传递方法和数据</li>
-</ul>
-</li>
-</ul>
+<li>自定义事件<ol>
+<li>绑定事件监听<br>事件名(类型): 任意<br>回调函数: 通过形参接收数据, 在函数体处理事件</li>
+<li>触发(emit)/分发(dispatch)事件(编码)<br>事件名(类型): 与绑定的事件监听的事件名一致<br>数据: 会自动传递给回调函数</li>
+</ol>
 </li>
 </ol>
+<h3 id="2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><a href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件" class="headerlink" title="2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件"></a>2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</h3><p>redux是一个第三方库,在React里负责集中式管理状态数据,也是React常用的状态管理库,他有3个模块,actions模块:创建多个状态数据的对象,reducers模块:是ul界面调用actions的方法,触发reducers模块处理相应的逻辑,产生新的状态数据,store模块:负责存储方法和状态数据.创建一个对应的容器组件,index引入容器组件.通过标签属性的方式传递方法和数据</p>
 <h3 id="3-数组的特殊方法及伪数组转换为真数组"><a href="#3-数组的特殊方法及伪数组转换为真数组" class="headerlink" title="3. 数组的特殊方法及伪数组转换为真数组"></a>3. 数组的特殊方法及伪数组转换为真数组</h3><pre><code>var arr = [1, 4, 6, 2, 5, 6];
 console.log(arr.indexOf(6));//2
 //Array.prototype.lastIndexOf(value) : 得到值在数组中的最后一个下标
