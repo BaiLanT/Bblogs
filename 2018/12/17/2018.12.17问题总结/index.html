@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="帝都前端小学生">
 <meta property="og:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示 测试var btn = do">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T15:17:32.931Z">
+<meta property="og:updated_time" content="2018-12-18T15:20:53.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018.12.17问题总结">
 <meta name="twitter:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示 测试var btn = do">
@@ -168,12 +168,13 @@
       
         <h3 id="1-事件处理机制的理解"><a href="#1-事件处理机制的理解" class="headerlink" title="1. 事件处理机制的理解"></a>1. 事件处理机制的理解</h3><pre><code>定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的
 </code></pre><ol>
-<li>DOM事件(DOM0)<br> <h3 style="color: red">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定</h3><h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3> <button id="btn">测试</button><pre><code>var btn = document.getElementById(&apos;btn&apos;);
+<li>DOM事件(DOM0)<br> 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3> <button id="btn">测试</button><pre><code>var btn = document.getElementById(&apos;btn&apos;);
 btn.onclick = function () { alert(123) }; // 123
 btn.onclick = function () { alert(456) }; // 456
 btn.onclick = null // 解除绑定
 </code></pre><a id="more"></a></li>
-<li>DOM事件(DOM2)<br> <h3 style="color: red">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.<br>解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</h3><h3 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h3> var btn = document.getElementById(‘btn’);<pre><code>var btn1 = document.getElementById(&apos;btn1&apos;);
+<li>DOM事件(DOM2)<br> 语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.<br>解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)<h3 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h3><pre><code>var btn = document.getElementById(&apos;btn&apos;);
+var btn1 = document.getElementById(&apos;btn1&apos;);
 btn.addEventListener(&apos;click&apos;,function () {
  alert(123)
 },false); 
@@ -355,7 +356,7 @@ Array.from(btns).forEach(function (item, index) {
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件处理机制的理解"><span class="toc-number">1.</span> <span class="toc-text">1. 事件处理机制的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示"><span class="toc-number">3.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示-1"><span class="toc-number">5.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><span class="toc-number">6.</span> <span class="toc-text">2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组的特殊方法及伪数组转换为真数组"><span class="toc-number">7.</span> <span class="toc-text">3. 数组的特殊方法及伪数组转换为真数组</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件处理机制的理解"><span class="toc-number">1.</span> <span class="toc-text">1. 事件处理机制的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示"><span class="toc-number">2.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示-1"><span class="toc-number">3.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><span class="toc-number">4.</span> <span class="toc-text">2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组的特殊方法及伪数组转换为真数组"><span class="toc-number">5.</span> <span class="toc-text">3. 数组的特殊方法及伪数组转换为真数组</span></a></li></ol>
                     </div>
                 </span>
             </div>
