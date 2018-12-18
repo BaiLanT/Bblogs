@@ -169,21 +169,58 @@
       
         <h3 id="1-事件处理机制的理解"><a href="#1-事件处理机制的理解" class="headerlink" title="1. 事件处理机制的理解"></a>1. 事件处理机制的理解</h3><pre><code>定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的
 </code></pre><ol>
-<li><p>DOM事件(DOM0)<br> </p><h3 style="color: red">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定</h3><p></p>
-<h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4><pre><code>&lt;button id=&quot;btn&quot;&gt;测试&lt;/button&gt;
+<li>DOM事件(DOM0)<br> <h3 style="color: red">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定</h3><h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4> <button id="btn">测试</button><br> var btn = document.getElementById(‘btn’);<br> btn.onclick = function () { alert(123) }; // 123<br> btn.onclick = function () { alert(456) }; // 456<br> btn.onclick = null // 解除绑定<!-- 展开全文 --></li>
+<li><p>DOM事件(DOM2)<br> </p><h3 style="color: red">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.<br>解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</h3><p></p>
+<h4 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h4><p> var btn = document.getElementById(‘btn’);<br> var btn1 = document.getElementById(‘btn1’);<br> btn.addEventListener(‘click’,function () {<br>  alert(123)<br> },false);<br> fn1 () {<br> alert(456)<br> }<br> btn1.addEventListener(‘click’,fn1);<br> // 执行结果为: 123 =&gt; 456<br> btn1.removeEventListener(‘click’,fn1())<br> btn.addEventListener(‘click’,function () {<br>  alert(123)<br> },true);<br> btn1.addEventListener(‘click’,function () {<br>  alert(456)<br> },true);<br> // 执行结果为: 456 =&gt; 123</p>
+</li>
+<li><p>自定义事件</p>
+<ul>
+<li>绑定事件监听<ul>
+<li>事件名(类型): 任意</li>
+<li>回调函数: 通过形参接收数据, 在函数体处理事件</li>
+</ul>
+</li>
+<li>触发(emit)/分发(dispatch)事件(编码)<ul>
+<li>事件名(类型): 与绑定的事件监听的事件名一致</li>
+<li>数据: 会自动传递给回调函数</li>
+<li><h3 id="2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><a href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件" class="headerlink" title="2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件"></a>2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</h3>redux是一个第三方库,在React里负责集中式管理状态数据,也是React常用的状态管理库,他有3个模块,actions模块:创建多个状态数据的对象,reducers模块:是ul界面调用actions的方法,触发reducers模块处理相应的逻辑,产生新的状态数据,store模块:负责存储方法和状态数据.创建一个对应的容器组件,index引入容器组件.通过标签属性的方式传递方法和数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-数组的特殊方法及伪数组转换为真数组"><a href="#3-数组的特殊方法及伪数组转换为真数组" class="headerlink" title="3. 数组的特殊方法及伪数组转换为真数组"></a>3. 数组的特殊方法及伪数组转换为真数组</h3><pre><code>var arr = [1, 4, 6, 2, 5, 6];
+console.log(arr.indexOf(6));//2
+//Array.prototype.lastIndexOf(value) : 得到值在数组中的最后一个下标
+console.log(arr.lastIndexOf(6));//5
 
-  var btn = document.getElementById(&apos;btn&apos;);
-  btn.onclick = function () { alert(123) }; // 123
-  btn.onclick = function () { alert(456) }; // 456
-  btn.onclick = null // 解除绑定
+//Array.prototype.forEach(function(item, index){}) : 遍历数组
+arr.forEach(function (item, index) {
+    console.log(item, index);
+});
+
+//Array.prototype.map(function(item, index){}) : 遍历数组返回一个新的数组，返回加工之后的值
+var arr1 = arr.map(function (item, index) {
+    return item + 10
+});
+console.log(arr, arr1);
+
+//Array.prototype.filter(function(item, index){}) : 遍历过滤出一个新的子数组， 返回条件为true的值
+var arr2 = arr.filter(function (item, index) {
+    return item &gt; 4
+});
+console.log(arr, arr2);
+//Array.from(v) : 将伪数组对象或可遍历对象转换为真数组
+let btns = document.getElementsByTagName(&apos;button&apos;);
+console.log(btns.length);//3
+Array.from(btns).forEach(function (item, index) {
+    console.log(item, index);
+});
 </code></pre>
-        
-          <a class="article-more-a" href="/Bblogs/2018/12/17/2018.12.17问题总结/#more">more >></a>
-        
       
 
       
-    </li></ol></div>
+    </div>
     <div class="article-info article-info-index">
       
       
