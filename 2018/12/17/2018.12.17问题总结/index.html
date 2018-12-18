@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://BaiLanT.github.io/Bblogs">
   <title>2018.12.17问题总结 | 帝都前端小学生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示 测试 var btn = d">
+  <meta name="description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示&amp;lt;button id=&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2018.12.17问题总结">
 <meta property="og:url" content="http://BaiLanT.github.io/Bblogs/2018/12/17/2018.12.17问题总结/index.html">
 <meta property="og:site_name" content="帝都前端小学生">
-<meta property="og:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示 测试 var btn = d">
+<meta property="og:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示&amp;lt;button id=&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T13:29:04.749Z">
+<meta property="og:updated_time" content="2018-12-18T13:32:06.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018.12.17问题总结">
-<meta name="twitter:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示 测试 var btn = d">
+<meta name="twitter:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的  DOM事件(DOM0) 语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定代码演示&amp;lt;button id=&amp;">
   
     <link rel="alternative" href="/atom.xml" title="帝都前端小学生" type="application/atom+xml">
   
@@ -168,10 +168,32 @@
       
         <h3 id="1-事件处理机制的理解"><a href="#1-事件处理机制的理解" class="headerlink" title="1. 事件处理机制的理解"></a>1. 事件处理机制的理解</h3><pre><code>定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的
 </code></pre><ol>
-<li>DOM事件(DOM0)<br> <h3 style="color: red">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定</h3><h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4> <button id="btn">测试</button><br> var btn = document.getElementById(‘btn’);<br> btn.onclick = function () { alert(123) }; // 123<br> btn.onclick = function () { alert(456) }; // 456<br> btn.onclick = null // 解除绑定<!-- 展开全文 --></li>
+<li>DOM事件(DOM0)<br> <h3 style="color: red">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.<br>解绑:可设置onclick=null来接触绑定</h3><h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;测试&lt;/button&gt;
+var btn = document.getElementById(&apos;btn&apos;);
+btn.onclick = function () { alert(123) }; // 123
+btn.onclick = function () { alert(456) }; // 456
+btn.onclick = null // 解除绑定
+</code></pre><!-- 展开全文 --></li>
 <li><p>DOM事件(DOM2)<br> </p><h3 style="color: red">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.<br>解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</h3><p></p>
-<h4 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h4><p> var btn = document.getElementById(‘btn’);<br> var btn1 = document.getElementById(‘btn1’);<br> btn.addEventListener(‘click’,function () {<br>  alert(123)<br> },false);<br> fn1 () {<br> alert(456)<br> }<br> btn1.addEventListener(‘click’,fn1);<br> // 执行结果为: 123 =&gt; 456<br> btn1.removeEventListener(‘click’,fn1())<br> btn.addEventListener(‘click’,function () {<br>  alert(123)<br> },true);<br> btn1.addEventListener(‘click’,function () {<br>  alert(456)<br> },true);<br> // 执行结果为: 456 =&gt; 123</p>
-</li>
+<h3 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h3><pre><code>var btn = document.getElementById(&apos;btn&apos;);
+var btn1 = document.getElementById(&apos;btn1&apos;);
+btn.addEventListener(&apos;click&apos;,function () {
+ alert(123)
+},false); 
+fn1 () {
+alert(456)
+}
+btn1.addEventListener(&apos;click&apos;,fn1); 
+// 执行结果为: 123 =&gt; 456 
+btn1.removeEventListener(&apos;click&apos;,fn1())
+btn.addEventListener(&apos;click&apos;,function () {
+ alert(123)
+},true);
+btn1.addEventListener(&apos;click&apos;,function () {
+ alert(456)
+},true);
+// 执行结果为: 456 =&gt; 123
+</code></pre></li>
 <li><p>自定义事件</p>
 <ul>
 <li>绑定事件监听<ul>
@@ -337,7 +359,7 @@ Array.from(btns).forEach(function (item, index) {
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件处理机制的理解"><span class="toc-number">1.</span> <span class="toc-text">1. 事件处理机制的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示"><span class="toc-number">2.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示-1"><span class="toc-number">3.1.</span> <span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><span class="toc-number">4.</span> <span class="toc-text">2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组的特殊方法及伪数组转换为真数组"><span class="toc-number">5.</span> <span class="toc-text">3. 数组的特殊方法及伪数组转换为真数组</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件处理机制的理解"><span class="toc-number">1.</span> <span class="toc-text">1. 事件处理机制的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.解绑:可设置onclick=null来接触绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示"><span class="toc-number">3.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">语法: el.addEventListener(‘不带on的事件类型’,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.解绑:可通过设置 el.removeEventListener(‘事件的类型’,’函数名(函数必须为有名函数)’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示-1"><span class="toc-number">5.</span> <span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><span class="toc-number">6.</span> <span class="toc-text">2. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组的特殊方法及伪数组转换为真数组"><span class="toc-number">7.</span> <span class="toc-text">3. 数组的特殊方法及伪数组转换为真数组</span></a></li></ol>
                     </div>
                 </span>
             </div>
