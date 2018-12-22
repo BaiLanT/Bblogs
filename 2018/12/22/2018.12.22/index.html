@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://BaiLanT.github.io/Bblogs">
-  <title>2018.12.17问题总结 | 帝都前端小学生</title>
+  <title>帝都前端小学生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的 1. DOM事件(DOM0)     语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.&amp;lt;/br&amp;gt;解绑:可设置onclick=null来接触绑定 2">
+  <meta name="description" content="2018.12.22问题汇总#1 原型链的理解  作用:原型链用于查找对象的属性 原型链是什么: 实例对象上都会有一个隐式原型属性(proto),它执行的就是原型对象,而原型对象也有prpto属性指向它的原型对象.   proto为什么指向的是原型对象? 构造函数对象上有显示原型属性,它指向的就是原型对象 实例对象的proto属性被赋值为构造函数的prototype属性值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018.12.17问题总结">
-<meta property="og:url" content="http://BaiLanT.github.io/Bblogs/2018/12/17/2018.12.17问题总结/index.html">
+<meta property="og:title" content="帝都前端小学生">
+<meta property="og:url" content="http://BaiLanT.github.io/Bblogs/2018/12/22/2018.12.22/index.html">
 <meta property="og:site_name" content="帝都前端小学生">
-<meta property="og:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的 1. DOM事件(DOM0)     语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.&amp;lt;/br&amp;gt;解绑:可设置onclick=null来接触绑定 2">
+<meta property="og:description" content="2018.12.22问题汇总#1 原型链的理解  作用:原型链用于查找对象的属性 原型链是什么: 实例对象上都会有一个隐式原型属性(proto),它执行的就是原型对象,而原型对象也有prpto属性指向它的原型对象.   proto为什么指向的是原型对象? 构造函数对象上有显示原型属性,它指向的就是原型对象 实例对象的proto属性被赋值为构造函数的prototype属性值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T15:37:36.008Z">
+<meta property="og:image" content="https://vuex.vuejs.org/zh-cn/images/vuex.png">
+<meta property="og:updated_time" content="2018-12-22T13:26:38.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018.12.17问题总结">
-<meta name="twitter:description" content="1. 事件处理机制的理解定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的 1. DOM事件(DOM0)     语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.&amp;lt;/br&amp;gt;解绑:可设置onclick=null来接触绑定 2">
+<meta name="twitter:title" content="帝都前端小学生">
+<meta name="twitter:description" content="2018.12.22问题汇总#1 原型链的理解  作用:原型链用于查找对象的属性 原型链是什么: 实例对象上都会有一个隐式原型属性(proto),它执行的就是原型对象,而原型对象也有prpto属性指向它的原型对象.   proto为什么指向的是原型对象? 构造函数对象上有显示原型属性,它指向的就是原型对象 实例对象的proto属性被赋值为构造函数的prototype属性值">
+<meta name="twitter:image" content="https://vuex.vuejs.org/zh-cn/images/vuex.png">
   
     <link rel="alternative" href="/atom.xml" title="帝都前端小学生" type="application/atom+xml">
   
@@ -146,90 +148,122 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2018.12.17问题总结" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-2018.12.22" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      2018.12.17问题总结
-    </h1>
-  
-
-        
-        <a href="/Bblogs/2018/12/17/2018.12.17问题总结/" class="archive-article-date">
-  	<time datetime="2018-12-17T13:31:20.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-事件处理机制的理解"><a href="#1-事件处理机制的理解" class="headerlink" title="1. 事件处理机制的理解"></a>1. 事件处理机制的理解</h3><pre><code>定义:事件处理机制分为两个方面,1.DOM事件(DOM事件分为DOM0和DOM2语法.) 2.自定义事件.都是用户的行为直接或者间接导致的
-1. DOM事件(DOM0)
-    语法:el.onXXX(XXX表示事件类型)来进行绑定事件的.不可在一个元素上设置多个相同的事件.默认触发最后一个设置的事件.&lt;/br&gt;解绑:可设置onclick=null来接触绑定
-</code></pre><h3 id="2-代码演示"><a href="#2-代码演示" class="headerlink" title="2. 代码演示"></a>2. 代码演示</h3><pre><code>&lt;button id=&quot;btn&quot;&gt;测试&lt;/button&gt;
-var btn = document.getElementById(&apos;btn&apos;);
-btn.onclick = function () { alert(123) }; // 123
-btn.onclick = function () { alert(456) }; // 456
-btn.onclick = null // 解除绑定
-</code></pre><a id="more"></a>
-<pre><code>2. DOM事件(DOM2)
-    语法: el.addEventListener(&apos;不带on的事件类型&apos;,事件处理的回调函数,是否在捕获阶段触发默认false(冒泡触发))可设置多个相同的事件,先设置的触发.后设置的后触发.&lt;br/&gt;解绑:可通过设置 el.removeEventListener(&apos;事件的类型&apos;,&apos;函数名(函数必须为有名函数)&apos;)
-</code></pre><h3 id="3-代码演示"><a href="#3-代码演示" class="headerlink" title="3. 代码演示"></a>3. 代码演示</h3><pre><code>        var btn = document.getElementById(&apos;btn&apos;);
-        var btn1 = document.getElementById(&apos;btn1&apos;);
-        btn.addEventListener(&apos;click&apos;,function () {
-         alert(123)
-        },false); 
-        fn1 () {
-        alert(456)
-        }
-        btn1.addEventListener(&apos;click&apos;,fn1); 
-        // 执行结果为: 123 =&gt; 456 
-        btn1.removeEventListener(&apos;click&apos;,fn1())
-        btn.addEventListener(&apos;click&apos;,function () {
-         alert(123)
-        },true);
-        btn1.addEventListener(&apos;click&apos;,function () {
-         alert(456)
-        },true);
-        // 执行结果为: 456 =&gt; 123
-3. 自定义事件
-   1. 绑定事件监听
-      事件名(类型): 任意   
-      回调函数: 通过形参接收数据, 在函数体处理事件
-   2. 触发(emit)/分发(dispatch)事件(编码)
-      事件名(类型): 与绑定的事件监听的事件名一致   
-      数据: 会自动传递给回调函数
-</code></pre><h3 id="4-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><a href="#4-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件" class="headerlink" title="4. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件"></a>4. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</h3><p>redux是一个第三方库,在React里负责集中式管理状态数据,也是React常用的状态管理库,他有3个模块,actions模块:创建多个状态数据的对象,reducers模块:是ul界面调用actions的方法,触发reducers模块处理相应的逻辑,产生新的状态数据,store模块:负责存储方法和状态数据.创建一个对应的容器组件,index引入容器组件.通过标签属性的方式传递方法和数据</p>
-<h3 id="5-数组的特殊方法及伪数组转换为真数组"><a href="#5-数组的特殊方法及伪数组转换为真数组" class="headerlink" title="5. 数组的特殊方法及伪数组转换为真数组"></a>5. 数组的特殊方法及伪数组转换为真数组</h3><pre><code>var arr = [1, 4, 6, 2, 5, 6];
-console.log(arr.indexOf(6));//2
-//Array.prototype.lastIndexOf(value) : 得到值在数组中的最后一个下标
-console.log(arr.lastIndexOf(6));//5
+        <hr>
+<h2 id="2018-12-22问题汇总"><a href="#2018-12-22问题汇总" class="headerlink" title="2018.12.22问题汇总"></a>2018.12.22问题汇总</h2><p>#1 原型链的理解</p>
+<ol>
+<li>作用:原型链用于查找对象的属性</li>
+<li>原型链是什么:<ol>
+<li>实例对象上都会有一个隐式原型属性(<em>proto</em>),它执行的就是原型对象,而原型对象也有<em>prpto</em>属性指向它的原型对象.</li>
+</ol>
+</li>
+<li><em>proto</em>为什么指向的是原型对象?<ol>
+<li>构造函数对象上有显示原型属性,它指向的就是原型对象</li>
+<li>实例对象的proto属性被赋值为构造函数的prototype属性值</li>
+</ol>
+</li>
+</ol>
+<a id="more"></a>
+<p>#2 闭包的理解</p>
+<ol>
+<li><p>如果产生闭包?</p>
+<ol>
+<li>函数嵌套</li>
+<li><p>内部函数应用了外部函数的变量</p>
+<ol>
+<li><p>如果内部函数在没有定义前是不会产生闭包的</p>
+<pre><code>function fn1() {
+    var a =2
+    debugger // 由于函数提升闭包在此行已经产生了
+    function fn2() {
+      a++
+      console.log(a)
+    }
+  }
+ fn1()
 
-//Array.prototype.forEach(function(item, index){}) : 遍历数组
-arr.forEach(function (item, index) {
-    console.log(item, index);
-});
+function fn3() {
+   var a =2
+   debugger // 由于函数没有闭包在此行还没有产生
+   var fn4 =function () {
+     a++
+     console.log(a)
+   }
+ }
+fn3()
+</code></pre></li>
+</ol>
+</li>
+<li>执行外部函数</li>
+</ol>
+</li>
+</ol>
+<p>#3 IIFE模块</p>
+<ol>
+<li>定义:匿名函数自调用</li>
+</ol>
+<p>#4 数组的相关方法<br>    forEach() // 普通遍历<br>        Array.sort((e1, e2) =&gt; e2-e1) // 数组降序<br>        reduce((pre, e) =&gt; pre+e, 0) // 叠加器<br>        find(e =&gt; e&gt;1) // 查找,返回e&gt;1的第一个值<br>        filter(e =&gt; e&gt;1) // 过滤出e&gt;1的所有值<br>        map(e=&gt; e=a ) // 改变数组的值返回出新的值</p>
+<p>#5 Vuex结构图<br><img src="https://vuex.vuejs.org/zh-cn/images/vuex.png" alt="vuex结构"></p>
+<p>#6 vuex的核心概念</p>
+<h2 id="1-state"><a href="#1-state" class="headerlink" title="1). state"></a>1). state</h2><pre><code>vuex管理的状态对象
+它应该是唯一的
+const state = {
+    xxx: initValue
+}
+</code></pre><h2 id="2-mutations"><a href="#2-mutations" class="headerlink" title="2). mutations"></a>2). mutations</h2><pre><code>包含多个直接更新state的方法(回调函数)的对象
+谁来触发: action中的commit(&apos;mutation名称&apos;)
+只能包含同步的代码, 不能写异步代码
+const mutations = {
+    yyy (state, data) { 
+        // 更新state的某个属性
+    }
+}
+</code></pre><h2 id="3-actions"><a href="#3-actions" class="headerlink" title="3). actions"></a>3). actions</h2><pre><code>包含多个事件回调函数的对象
+通过执行: commit()来触发mutation的调用, 间接更新state
+谁来触发: 组件中: $store.dispatch(&apos;action名称&apos;)  // &apos;zzz&apos;
+可以包含异步代码(定时器, ajax)
+const actions = {
+    zzz ({commit, state}, data1) {
+        commit(&apos;yyy&apos;, data2)
+    }
+}
+</code></pre><h2 id="4-getters"><a href="#4-getters" class="headerlink" title="4). getters"></a>4). getters</h2><pre><code>包含多个计算属性(get)的对象
+谁来读取: 组件中: $store.getters.xxx
+const getters = {
+    mmm (state) {
+        return ...
+    }
+}
+</code></pre><h2 id="5-modules"><a href="#5-modules" class="headerlink" title="5). modules"></a>5). modules</h2><pre><code>包含多个module
+一个module是一个store的配置对象
+与一个组件(包含有共享数据)对应
+</code></pre><h2 id="6-向外暴露store对象"><a href="#6-向外暴露store对象" class="headerlink" title="6). 向外暴露store对象"></a>6). 向外暴露store对象</h2><pre><code>export default new Vuex.Store({
+    state,
+    mutations,
+    actions,
+    getters
+})
+</code></pre><h2 id="7-组件中"><a href="#7-组件中" class="headerlink" title="7). 组件中:"></a>7). 组件中:</h2><pre><code>import {mapGetters, mapActions} from &apos;vuex&apos;
+export default {
+    computed: mapGetters([&apos;mmm&apos;])
+    methods: mapActions([&apos;zzz&apos;])
+}
 
-//Array.prototype.map(function(item, index){}) : 遍历数组返回一个新的数组，返回加工之后的值
-var arr1 = arr.map(function (item, index) {
-    return item + 10
-});
-console.log(arr, arr1);
-
-//Array.prototype.filter(function(item, index){}) : 遍历过滤出一个新的子数组， 返回条件为true的值
-var arr2 = arr.filter(function (item, index) {
-    return item &gt; 4
-});
-console.log(arr, arr2);
-//Array.from(v) : 将伪数组对象或可遍历对象转换为真数组
-let btns = document.getElementsByTagName(&apos;button&apos;);
-console.log(btns.length);//3
-Array.from(btns).forEach(function (item, index) {
-    console.log(item, index);
-});
+{{mmm}} @click=&quot;zzz(data)&quot;
+</code></pre><h2 id="8-映射store"><a href="#8-映射store" class="headerlink" title="8). 映射store"></a>8). 映射store</h2><pre><code>import store from &apos;./store&apos;
+new Vue({
+    store
+})
+</code></pre><h2 id="9-store对象"><a href="#9-store对象" class="headerlink" title="9). store对象"></a>9). store对象</h2><pre><code>1.所有用vuex管理的组件中都多了一个属性$store, 它就是一个store对象
+2.属性:
+  state: 注册的state对象
+  getters: 注册的getters对象
+3.方法:
+  dispatch(actionName, data): 分发action 
 </code></pre>
       
 
@@ -309,7 +343,7 @@ Array.from(btns).forEach(function (item, index) {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://BaiLanT.github.io/Bblogs/2018/12/17/2018.12.17问题总结/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://BaiLanT.github.io/Bblogs/2018/12/22/2018.12.22/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +357,9 @@ Array.from(btns).forEach(function (item, index) {
   
 <nav id="article-nav">
   
-    <a href="/Bblogs/2018/12/22/2018.12.22/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/Bblogs/2018/12/17/vueSource_README/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VueSource</div>
+    <a href="/Bblogs/2018/12/17/2018.12.17问题总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2018.12.17问题总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -361,7 +386,7 @@ Array.from(btns).forEach(function (item, index) {
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-事件处理机制的理解"><span class="toc-number">1.</span> <span class="toc-text">1. 事件处理机制的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-代码演示"><span class="toc-number">2.</span> <span class="toc-text">2. 代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-代码演示"><span class="toc-number">3.</span> <span class="toc-text">3. 代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-redux的传递方式是否是集中式管理状态方法-分发数据给UI组件"><span class="toc-number">4.</span> <span class="toc-text">4. redux的传递方式是否是集中式管理状态方法,分发数据给UI组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-数组的特殊方法及伪数组转换为真数组"><span class="toc-number">5.</span> <span class="toc-text">5. 数组的特殊方法及伪数组转换为真数组</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-12-22问题汇总"><span class="toc-number">1.</span> <span class="toc-text">2018.12.22问题汇总</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-state"><span class="toc-number">2.</span> <span class="toc-text">1). state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-mutations"><span class="toc-number">3.</span> <span class="toc-text">2). mutations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-actions"><span class="toc-number">4.</span> <span class="toc-text">3). actions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-getters"><span class="toc-number">5.</span> <span class="toc-text">4). getters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-modules"><span class="toc-number">6.</span> <span class="toc-text">5). modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-向外暴露store对象"><span class="toc-number">7.</span> <span class="toc-text">6). 向外暴露store对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-组件中"><span class="toc-number">8.</span> <span class="toc-text">7). 组件中:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-映射store"><span class="toc-number">9.</span> <span class="toc-text">8). 映射store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-store对象"><span class="toc-number">10.</span> <span class="toc-text">9). store对象</span></a></li></ol>
                     </div>
                 </span>
             </div>
